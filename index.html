@@ -21,6 +21,7 @@
         newElement.setAttribute("componentID", componentID);
         if (attributes) {
           attributes.forEach(({ attributeName, attributeValue }) => {
+            if(attributeName == 'contenteditable') return
             newElement.setAttribute(
               attributeName,
               attributeValue ? attributeValue : true
