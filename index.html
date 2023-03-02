@@ -9,7 +9,9 @@
     <script defer src="./scripts/index.js"></script>
   </head>
   <body>
-    <input id="file" type="file" />
+    <div class="upload-container">
+      <input id="file" type="file" />
+    </div>
     <script>
       const buildElement = (
         { tagName, children, attributes, componentID },
@@ -54,6 +56,7 @@
         function onReaderLoad(event) {
           var obj = JSON.parse(event.target.result);
           buildUI(obj, document.querySelector("body"))
+          document.querySelector(".upload-container").remove()
         }
         document.getElementById("file").addEventListener("change", onChange);
       })();
